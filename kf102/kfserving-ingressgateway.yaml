@@ -1,0 +1,187 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"kfserving-ingressgateway","kfserving":"ingressgateway"},"name":"kfserving-ingressgateway","namespace":"istio-system"},"spec":{"ports":[{"name":"status-port","port":15020,"targetPort":15020},{"name":"http2","nodePort":32380,"port":80,"targetPort":80},{"name":"https","nodePort":32390,"port":443},{"name":"tcp","nodePort":32400,"port":31400},{"name":"tcp-pilot-grpc-tls","port":15011,"targetPort":15011},{"name":"tcp-citadel-grpc-tls","port":8060,"targetPort":8060},{"name":"tcp-dns-tls","port":853,"targetPort":853},{"name":"https-kiali","port":15029,"targetPort":15029},{"name":"http2-prometheus","port":15030,"targetPort":15030},{"name":"http2-grafana","port":15031,"targetPort":15031},{"name":"https-tracing","port":15032,"targetPort":15032},{"name":"tls","port":15443,"targetPort":15443}],"selector":{"app":"kfserving-ingressgateway","kfserving":"ingressgateway"},"type":"LoadBalancer"}}
+  creationTimestamp: "2021-01-21T07:50:46Z"
+  labels:
+    app: kfserving-ingressgateway
+    kfserving: ingressgateway
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:labels:
+          .: {}
+          f:app: {}
+          f:kfserving: {}
+      f:spec:
+        f:externalTrafficPolicy: {}
+        f:ports:
+          .: {}
+          k:{"port":80,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:nodePort: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+          k:{"port":443,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:nodePort: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+          k:{"port":853,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+          k:{"port":8060,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+          k:{"port":15011,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+          k:{"port":15020,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+          k:{"port":15029,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+          k:{"port":15030,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+          k:{"port":15031,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+          k:{"port":15032,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+          k:{"port":15443,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+          k:{"port":31400,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:nodePort: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+        f:selector:
+          .: {}
+          f:app: {}
+          f:kfserving: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: kfctl
+    operation: Update
+    time: "2021-01-21T07:50:46Z"
+  name: kfserving-ingressgateway
+  namespace: istio-system
+  resourceVersion: "1269"
+  selfLink: /api/v1/namespaces/istio-system/services/kfserving-ingressgateway
+  uid: f5515d59-1c95-4db5-bda2-a97c9102bd2b
+spec:
+  clusterIP: 10.111.71.158
+  externalTrafficPolicy: Cluster
+  ports:
+  - name: status-port
+    nodePort: 30457
+    port: 15020
+    protocol: TCP
+    targetPort: 15020
+  - name: http2
+    nodePort: 32380
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  - name: https
+    nodePort: 32390
+    port: 443
+    protocol: TCP
+    targetPort: 443
+  - name: tcp
+    nodePort: 32400
+    port: 31400
+    protocol: TCP
+    targetPort: 31400
+  - name: tcp-pilot-grpc-tls
+    nodePort: 31845
+    port: 15011
+    protocol: TCP
+    targetPort: 15011
+  - name: tcp-citadel-grpc-tls
+    nodePort: 31858
+    port: 8060
+    protocol: TCP
+    targetPort: 8060
+  - name: tcp-dns-tls
+    nodePort: 30643
+    port: 853
+    protocol: TCP
+    targetPort: 853
+  - name: https-kiali
+    nodePort: 31230
+    port: 15029
+    protocol: TCP
+    targetPort: 15029
+  - name: http2-prometheus
+    nodePort: 32395
+    port: 15030
+    protocol: TCP
+    targetPort: 15030
+  - name: http2-grafana
+    nodePort: 31349
+    port: 15031
+    protocol: TCP
+    targetPort: 15031
+  - name: https-tracing
+    nodePort: 31720
+    port: 15032
+    protocol: TCP
+    targetPort: 15032
+  - name: tls
+    nodePort: 31219
+    port: 15443
+    protocol: TCP
+    targetPort: 15443
+  selector:
+    app: kfserving-ingressgateway
+    kfserving: ingressgateway
+  sessionAffinity: None
+  type: NodePort
+  #type: LoadBalancer
+status:
+  loadBalancer: {}
